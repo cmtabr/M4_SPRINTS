@@ -38,7 +38,7 @@ int armazenaMedida(int *values, int size, int ultPos, int value) {
 	if(posAtual < size) {
 		values[posAtual] = value;
 	} else {
-		throw invalid_argument( "A posição está além do tamanho do vetor." );
+		throw invalid_argument( "A posição está além do tamanho maximo do vetor." );
 	}
 
 	return posAtual;
@@ -89,7 +89,7 @@ pair<string, int> direcaoMaiorDistancia(int distances[4]) {
 // retorna verdadeiro ou falso
 
 bool leComando() {
-	cout << "Para continuar digite 1, para para e obter o resultado digite 0: ";
+	cout << "Para continuar digite 1, para parar e obter o resultado digite 0: ";
 	char resp;
 
 	cin >> resp;
