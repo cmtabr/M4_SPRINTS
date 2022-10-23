@@ -52,19 +52,16 @@ int armazenaMedida(int *values, int size, int ultPos, int value) {
 
 pair<string, int> direcaoMaiorDistancia(int distances[4]) {
 	// declarar as variáveis locais relevantes
-	int maior = distances[0]; // começar pela distância no início do array
-	int idMaior = 0;				// usado para lógica condicional abaixo
+	int maior = distances[0]; 
+	int idMaior = 0;				
 
-	// vamos percorrer todo o vetor de distância para encontrar o maior valor
 	for (int i = 0; i < 4; i++) {
-		// se a distância for maior que todas as anteriores, atualizar o valor e index
 		if (distances[i] > maior) {
 			maior = distances[i];
 			idMaior = i;
 		}
 	}
 
-	// converter o index do maior valor para uma string
 	string maiorDir;
 	switch (idMaior) {
 		case 0:
@@ -81,7 +78,6 @@ pair<string, int> direcaoMaiorDistancia(int distances[4]) {
 		break;
 	}
 
-	// retornar uma tupla com o string da maior direção e o valor
 	return pair<string, int>(maiorDir, maior);
 }
 
