@@ -15,7 +15,7 @@
 int lux = 0; // Valor lido pelo sensor
 int ativaBtn1 = 1; 
 int ativaBtn2 = 1; 
-int binLeds = 0; // Armazena conversão do sensor para uma escala de 0 a 15
+int binLeds = 0; 
 int notas[30];
 int adiciona = 0;
 
