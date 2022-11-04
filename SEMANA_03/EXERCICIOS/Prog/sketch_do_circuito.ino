@@ -60,7 +60,7 @@ void led(){
   int lux = analogRead(3);
 
   if (binLeds != map(lux, 32, 4063, 0, 15)) {
-    // converter o valor lido pelo sensor em úm número de 0 a 15
+    // converte o valor lido em uma escala de 0 a 15
     binLeds = map(lux, 32, 4063, 0, 15);
     Serial.println(binLeds);
     countTo(binLeds);
@@ -68,17 +68,16 @@ void led(){
 }
 
 void acende(int value){
-  digitalWrite(LED1, value & 0b0001); // ligar o led 12
-  digitalWrite(LED2, value & 0b0010); // ligar o led 13
-  digitalWrite(LED3, value & 0b0100); // ligar o led 14
-  digitalWrite(LED4, value & 0b1000); // ligar o led 27
+  digitalWrite(LED1, value & 0b0001); 
+  digitalWrite(LED2, value & 0b0010); 
+  digitalWrite(LED3, value & 0b0100);
+  digitalWrite(LED4, value & 0b1000); 
 
 }
 
 
 void countTo (int value) {
   for(int i = 0; i <= value; i++) {
-    // Serial.println(i, DEC); // imprimir o valor lido
     acende(i);
     notaMusical(i);
     delay(250);
